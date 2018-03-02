@@ -1,0 +1,381 @@
+<html>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <body>
+    	<hr/>
+    	<p>
+    		<b>PRISM Break Secure Email</b> is a secure email solution for BlackBerry® 10 devices.
+    	</p>
+    	<p align="center">
+    		<img src="img/logo.png"/>
+    	</p>
+    	<hr/>
+    	<p>
+			BlackBerry® devices are the most secure devices in the world and together with BlackBerry® 
+			Enterprise Service 10 (in short, BES 10) they provide the most secure messaging. But those security 
+			works only on a transport layer between BlackBerry® devices and BES 10 servers. Unfortunately the email messages 
+			are still stored on email servers (e.g., Microsoft® Exchange Server, IBM Lotus® Domino, etc.) 
+			and any administrator of those servers can easily access to your messages stored there. 
+			That means email messages are highly secure for email server owners (corporations, companies and organizations) 
+			but not for user personally. Your privacy is on stake! And if you don't use BES 10 at all,
+			your transport layer may not be secure, too.
+    	</p>
+    	<p>
+			The <b>PRISM Break Secure Email</b> application protects your messages in two ways:
+			<ul>
+				<li>It <b>encrypts</b> your email messages with an asymmetric or symmetric encryption 
+				(the app is using a built-in <b>BlackBerry Library for the Security Builder Government Security Edition SB GSE-C</b> that is also known as 
+				<b>BlackBerry OS Cryptographic Kernel</b>), and</li>
+				<li>It wraps your encrypted messages into <b>password-protected</b> envelope.</li>
+			</ul>
+    	</p>
+    	<p>
+			The asymmetric cryptography (<b>RSA-1024</b>) uses your 1024-bit <b>public key</b> to encrypt the messages sent 
+			to you. That's why you have to share your public key to your communication parties otherwise <b>PRISM Break Secure Email</b> will
+			switch to symmetric encryption (<b>AES-256</b>). <b><u>We don't advise that!!!</u></b>. Because you are the 
+			only owner of your 1024-bit <b>private key</b> that is safely stored on your device, you are the only one 
+			that can read those messages.
+    	</p>
+		<p align="center">
+			<img src="img/asym_enc.jpg"/>
+		</p>
+     	<p>
+			If the <b>PRISM Break Secure Email</b> application switches to symmetric cryptography (<b>AES-256</b>), a special 
+			256-bit <b>security key</b> is used to encrypt messages. Although the key is unique for each user, we advise you to switch 
+			to asymmetric cryptography as soon as possible by exchanging public keys.
+    	</p>
+		<hr/>
+        <h1>1. Setup</h1>
+        <p>
+        	Before you can start using the <b>PRISM Break Secure Email</b> application, you need to set it up by choosing a password and creating asymmetric keys (one public key and one private key). You can also create backup of both keys or restore them from a secure backup file. 
+        </p>
+        <p>
+			All these steps are performed with a <b>setup wizard</b> in four basic steps.
+        </p>
+        <h3>Step 1: Welcome Screen</h3>
+        <p>
+        	Before starting setup, please read the <b>privacy policy</b> and the <b>end-user's license agreement</b>. 
+        </p>
+        <p>
+			If you agree with both, you can move to the next step by tapping on the <b><u>Next</u></b> action.
+        </p>
+    	<p align="center">
+    		<img src="img/w1.png"/>
+    	</p>
+        <h3>Step 2: Password Set Screen</h3>
+        <p>
+        	Your first action is to set a password that will be used in the <b>PRISM Break Secure Email</b> application. 
+			It must contain at least <u>6 characters</u> and must be re-typed correctly. Keep in mind that the more characters you have, the harder it is to crack the password. You can always change the password later. The password is also used to decrease the pseudo-random generator's vulnerability and to prevent regeneration of both keys. 
+        </p>
+        <p>
+			You can move to the next step by tapping on the <b><u>Next</u></b> action.
+        </p>
+    	<p align="center">
+    		<img src="img/w2.png"/>
+    	</p>
+        <h3>Step 3: Asymmetric Keys Generation Screen</h3>
+        <p>
+        	On the next screen, you need to generate your 1024-bit asymmetric keys: one <b>public</b> key and one 
+        	<b>private</b> key. The public key is used for encrypting messages. You always use recipients'
+        	public keys to do that. To decrypt the messages, you need to use your own private key. 
+        </p>
+        <p>
+        	The keys are created with a pseudo-random generator which is proven to be rather vulnerable, since the process of the key creation can be determined. This threat is eliminated by 
+			combining pseudo-random generator with your password and a virtual image that you draw on the screen. 
+			The password and the drawn image together decrease the pseudo-random generator's vulnerability and prevent regeneration of both keys. 	
+        </p>
+        <p>
+        	To start generating the asymmetric keys, tap somewhere on the screen and drag your finger drawing a virtual image until the progress meter shows movement. A randomly drawn virtual image generates an additional set of initial values for the key generation which is crucial for the security of your keys.
+        </p>
+        <p>
+			You can move to the last step by tapping on the <b><u>Next</u></b> action. 
+        </p>
+    	<p align="center">
+    		<img src="img/w3.png"/>
+    	</p>
+        <h3>Step 4: Keys Backup or Restore Screen</h3>
+        <p>
+        	The last screen offers an option to backup or restore your asymmetric keys.
+        </p>
+        <p>
+			If you are seting up the <b>PRISM Break Secure Email</b> application for the first time, it is advisable to backup your keys to your local drive, SD memory card or remotely on cloud (DropBox or Box). You need to set another 			password which is used as an AES-256 key for the symmetric encryption of the backup file.
+        </p>
+        <p>
+			If you have already backed-up your keys, you can restore them from your password-protected file on your local drive, 
+			SD memory card or remotely on cloud (DropBox or Box) to be able to read your older messages that use the old keys. This way there is no need to reshare your public key.
+        </p>
+        <p>
+        	The keys are stored in a file called <b>prism.keys</b> which are encrypted with the <b>AES-256</b> symmetric encryption using its own
+			<b>backup password</b> as a secure key. Keep in mind that the <b>backup password</b> is not the same as the <b>password</b> used
+        	in the <b>PRISM Break Secure Email</b> application (although it could be). The password is recommended to be at least 32 characters long to fill all 256 bytes of your key. <b>Note:</b> <i>the longer the password, the more secure your backup file.</i>
+        </p>
+        <p>
+        	Tap on the <b><u>Complete</u></b> action to finalize the setup steps.
+        </p>
+    	<p align="center">
+    		<img src="img/w4.png"/>
+    	</p>
+    	<hr/>
+        <h1>2. Application Center</h1>
+        <p>
+        	The application has three main tabs. It always starts in the composer tab where you can start 
+			composing new secure messages and send them via email.
+        </p>
+        <p>
+        	On the left bottom part of the main screen, you can find the tab selection icon. Tap on it to open the menu for switching between the three tabs:
+			<ul>
+				<li><b>Composer</b> tab for creating new messages,</li>
+				<li><b>Inbox</b> tab for reading received messages and replying, and</li>
+				<li><b>Key Info</b> tab for managing your security keys.</li>
+			</ul>
+        </p>
+    	<p align="center">
+    		<img src="img/tabs.png"/>
+    	</p>
+        <p>
+        	The main function of the <b>Composer</b> tab is to compose a new secure message, which can contain one attachment, and send it from
+			the email account. 
+			Additionally, the <b>Composer</b> tab can be used for  sending the public key via email.
+        </p>
+    	<p align="center">
+    		<img src="img/composer.png"/>
+    	</p>
+        <p>
+        	The <b>Inbox</b> tab shows a list of all received and sent secure messages and is used for reading, editing, replying and forwarding messages. 
+		</p>
+    	<p align="center">
+    		<img src="img/inbox.png"/>
+    	</p>
+        <p>
+        	On the <b>Key Info</b> tab, you can find information about your asymmetric keys.
+        </p>
+        <p>
+			The public key URL starts with <b>prismkey://</b> and is registered in BlackBerry® 10 OS to open a <b>PRISM Break Secure Email</b> key import card.
+        </p>
+        <p>
+			From the <b>Key Info</b> tab, you can backup your security keys, restore them, regenerate them, or reset the password.
+        </p>
+    	<p align="center">
+    		<img src="img/keyinfo.png"/>
+    	</p>
+    	<hr/>
+        <h1>3. Composing Secure Message</h1>
+        <p>
+        	The <b>PRISM Break Secure Email</b> application can compose a new secure message:
+			<ul>
+				<li>from within the Hub, or</li>
+				<li>from within the application.</li>
+			</ul>
+        </p>
+        <p>
+        	In the Hub, tap on the <b><u>Compose</u></b> action to create a new message.
+        </p>
+    	<p align="center">
+    		<img src="img/hub2.png"/>
+    	</p>
+        <p>
+        	On the <b>Composer</b> tab in the application, tap on the <b><u>Compose</u></b> image button to create a new message.
+        </p>
+    	<p align="center">
+    		<img src="img/compose.png"/>
+    	</p>
+		<p>
+		    Composer is used to create a secure message that contains a message body and optionally one attached file.
+		</p>
+        <p>
+        	There are two ways to set the recepient:
+			<ul>
+				<li>By tapping on the <b>TO:</b> text field, or</li>
+				<li>By selecting the <b>Set Recepient</b> menu item.</li>
+			</ul>
+        </p>
+		<p>
+		    In both cases, the contact picker pops up and a contact must be selected. If the contact has more than one email addresses, you need to choose one.
+		</p>
+		<p>
+		    <b>WARNING:</b> You can send the secure messages only to recepients that are stored in your contacts!
+		</p>
+		<p>
+		    <b>WARNING:</b> Because only one public key is used to encrypt the message, only one recepient can be set per message!
+		</p>
+    	<p align="center">
+    		<img src="img/recepient.png"/>
+    	</p>
+         <p>
+        	If you are using more than one email accounts, the account from which the secure email will be sent must be selected.
+        </p>
+    	<p align="center">
+    		<img src="img/account.png"/>
+    	</p>
+        <p>
+        	Message is written in a message box. You can use emoticons as part of your message. To clear the message box, select the <b>Clear Text</b> 
+			menu item.
+        </p>
+    	<p align="center">
+    		<img src="img/msg.png"/>
+    	</p>
+       <p>
+        	Only one file can be attached. To attach a file, select the <b>Set Attachment</b> menu item. File picker pops up for choosing the file.
+			To remove the file from the message, select the <b>Clear Attachment</b> menu item.
+        </p>
+         <p>
+        	When the file is attached, a paper clip appears on the screen. If you tap on the paper clip or select the <b>View Attachment Info</b>, 
+			information about a file path is shown.
+        </p>
+    	<p align="center">
+    		<img src="img/att.png"/>
+    	</p>
+       <p>
+        	To send the message, tap on the <b><u>Send</u></b> action.
+        </p>
+    	<p align="center">
+    		<img src="img/send.png"/>
+    	</p>
+    	<hr/>
+       <h1>4. Reading Secure Messages</h1>
+        <p>
+        	You can read secure messages from different locations:
+			<ul>
+				<li>From the Hub, or</li>
+				<li>From the application (<b>Inbox</b> tab).</li>
+			</ul>
+        </p>
+    	<p align="center">
+    		<img src="img/read_msg.png"/>
+    	</p>
+        <p>
+         	From the email message in the hub, tap on the attachment called <b>message.prism</b> that is going to invoke message view card after
+			the attachment is loaded.
+        </p>
+    	<p align="center">
+    		<img src="img/email.png"/>
+    	</p>
+        <p>
+        	From the <b>Inbox</b> tab in the application, you can see the list of all secure messages. By tapping on the message you can read it.
+        </p>
+    	<p align="center">
+    		<img src="img/inbox.png"/>
+    	</p>
+        <p>
+        	To reply the message, tap on the <b><u>Reply</u></b> action. Reply doesn't reattach the attachment from the original message if there is any
+			(<b>WARNING:</b> Full version only!).
+        </p>
+        <p>
+        	To forward the message, tap on the <b><u>Forward</u></b> action. Forward reattaches the attachment from the original message if there is any
+			(<b>WARNING:</b> Full version only!).
+        </p>
+        <p>
+        	To compose a new message, tap on the <b><u>New</u></b> action.
+        </p>
+        <p>
+        	To save the message's attachment to a file system, tap on the <b><u>Save Attachment</u></b> action. You can store the file on internal 
+			storage, external SD card or cloud storage (DropBox, Box or OneDrive). 
+        </p>
+        <p>
+			<b>WARNING:</b> Check the title of the message if it contains the attachment. If title shows <b>Message with Attachment</b> then attachment is 
+			available in the message. If title shows <b>Message</b> then attachment is not included.
+        </p>
+        <p>
+        	Each message contains a sender's public key. By tapping on the <b><u>Import Key</u></b> action you can import the key into the contacts.
+        </p>
+    	<p align="center">
+    		<img src="img/import_key.png"/>
+    	</p>
+		<hr/>
+        <h1>5. Key Management</h1>
+        <p>
+        	The following actions can be done on the security keys:
+			<ul>
+				<li>Sending your public key via email,</li>
+				<li>Sharing your public key,</li>
+				<li>Restoring your keys,</li>
+				<li>Backing up your keys, and</li>
+				<li>Reseting your password and keys.</li>
+			</ul>
+        </p>
+    	<p align="center">
+    		<img src="img/manage_keys.png"/>
+    	</p>
+        <p>
+        	There are two ways to send your public key:
+			<ul>
+				<li>Sending your public key as an email, and</li>
+				<li>Sharing your public key via BBM, SMS, email, Facebook, Twitter, LinkedIn, NFC, barcode or other messaging applications.</li>
+			</ul>
+        </p>
+        <h3>Restoring Your Keys</h3>
+        <p>
+        	Tap on the <b><u>Restore Keys</u></b> action to restore your security keys from a file called <b>prism.keys</b> from your local drive, 
+			SD memory card or remotely on cloud (DropBox or Box). You need to set another password that is used as AES-256 key for 
+			symmetric encryption of the backup file.
+        </p>
+		<p>
+		    The same action can be invoked from <b>Settings</b> menu.
+		</p>
+    	<p align="center">
+    		<img src="img/restore.png"/>
+    	</p>
+        <h3>Backing Up Your Keys</h3>
+        <p>
+        	Tap on the <b><u>Backup Keys</u></b> action to backup your security keys to a file called <b>prism.keys</b> on your local drive, 
+			SD memory card or remotely on cloud (DropBox or Box). You need to set another password that is used as AES-256 key for 
+			symmetric encryption of the backup file. Keep in mind that <b>backup password</b> is not the same as <b>password</b> used
+        	in the <b>PRISM Break Secure Email</b> application, but it could be the same. Password should be at least 32 characters long, to 
+			fill all 256 bytes of your key. <b>Note:</b> <i>Longer is the password, more secure is your backup file.</i>
+        </p>
+ 		<p>
+		    The same action can be invoked from <b>Settings</b> menu.
+		</p>
+    	<p align="center">
+    		<img src="img/backup.png"/>
+    	</p>
+        <h3>Resetting Your Keys and Password</h3>
+        <p>
+        	Tap on the <b><u>Reset</u></b> action to invoke setup wizard to reset the password and the security keys.
+        </p>
+		<hr/>
+        <h1>6. Settings</h1>
+        <p>
+        	Settings menu offers the following options:
+			<ul>
+				<li>Restoring your security keys,</li>
+				<li>Backing up your security keys, and</li>
+				<li>Changing your password.</li>
+			</ul>
+        </p>
+    	<p align="center">
+    		<img src="img/settings.png"/>
+    	</p>
+    	<hr/>
+        <h1>7. Sharing from External Applications</h1>
+        <p>
+        	<b>PRISM Break Secure Email</b> application is one of the applications that are listed in a share list. The application can be also
+			used when sharing:
+			<ul>
+				<li>A selected text from editors, viewers and other components, and</li>
+				<li>a selected file from a file manager.</li>
+			</ul>
+         </p>
+    	<hr/>
+        <h2>8. Purchase Full Version</h2>
+        <p>
+        	Free version of the application is fully functional when reading the mesage but has two limitations when composing it:
+			<ul>
+				<li>Only 50 characters can be send in the secure message, and</li>
+				<li>Attachment is not allowed.</li>
+			</ul>
+        </p>
+        <p>
+        	To unlock the application, tap on the <b><u>Purchase</u></b> action on the main application screen and complete the purchase process.
+        </p>
+    	<p align="center">
+    		<img src="img/purchase.png"/>
+    	</p>
+		<hr/>
+        <h1>9. More Information</h1>
+        <p>
+			If you have any additional questions don't hesitate to contact us at 
+			<a href="mailto:prismbreak@pronic.si">prismbreak@pronic.si</a>.
+        </p>
+    	<hr/>
+    </body>
+</html>
